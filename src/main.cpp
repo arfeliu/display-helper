@@ -2,6 +2,7 @@
 #include <shellapi.h>
 #include <physicalmonitorenumerationapi.h>
 #include <highlevelmonitorconfigurationapi.h>
+#include "resource.h"
 #include <vector>
 
 #pragma comment(lib,"Dxva2.lib")
@@ -136,14 +137,15 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE,LPSTR,int)
     nid.uID = 1;
     nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
     nid.uCallbackMessage = WM_TRAYICON;
-    nid.hIcon = (HICON)LoadImage(
-        NULL,
-        "../resources/icons/brightness.ico",
-        IMAGE_ICON,
-        16,
-        16,
-        LR_LOADFROMFILE
-    );
+    // nid.hIcon = (HICON)LoadImage(
+    //     NULL,
+    //     "../resources/icons/brightness.ico",
+    //     IMAGE_ICON,
+    //     16,
+    //     16,
+    //     LR_LOADFROMFILE
+    // );
+    nid.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_BRIGHTNESS));
 
     strcpy_s(nid.szTip,"Monitor Brightness");
 

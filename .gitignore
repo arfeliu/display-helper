@@ -39,3 +39,15 @@
 
 # debug information files
 *.dwo
+
+# Ignore build outputs
+/build/
+
+# Ignore Visual Studio files (optional)
+*.user
+*.suo
+*.vcxproj.user
+*.pdb
+*.obj
+*.exe
+*.res
