@@ -1,0 +1,1 @@
+#define IDI_BRIGHTNESS 101
